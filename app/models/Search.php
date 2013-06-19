@@ -28,8 +28,7 @@ use lithium\util\Validator;
 use lithium\security\Auth;
 use lithium\util\collection\Filters;
 
-class User extends \lithium\data\Model
+class Search extends \lithium\data\Model
 {
-	// This should be grabbed from somewhere else
-	protected $_schema = array();
+
 }
