@@ -22,12 +22,8 @@
  *
  */
 
-namespace app\controllers;
+namespace app\models;
 
-class AdminController extends \lithium\action\Controller
+class Post extends \lithium\data\Model
 {
-	public function index()
-	{
-		return $this->render(array('layout' => false));
-	}
 }
