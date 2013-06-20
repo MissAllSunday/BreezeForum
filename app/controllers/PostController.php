@@ -91,4 +91,9 @@ class PostController extends \lithium\action\Controller
 
 		// Re-direct the user to the BoardIndex
 	}
+
+	public function view()
+	{
+		// View a single post
+	}
 }
