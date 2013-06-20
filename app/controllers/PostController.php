@@ -44,9 +44,19 @@ class PostController extends \lithium\action\Controller
 	{
 		// Check the user and session and all that stuff
 
+		// We need the post schema
+		$this->schema = Post::$schema;
+
 		if ($this->request->data)
 		{
+			// The data been not empty just isn't enough for us greedies, we want moar!
+
 			// Call the model here and add the post
+			$post = Post::create($this->request->data);
+
+			// All done, redirect somewhere nice
+			if ($post->save())
+				$this->redirect();
 		}
 
 		// No data huh? log it and send back to the index, tell the user what went wrong
@@ -58,10 +68,27 @@ class PostController extends \lithium\action\Controller
 	{
 		// Check, check checks!
 
+		// We need the post schema
+		$this->schema = Post::$schema;
+
 		// Make sure this particular post do exists
 
 		// It doesn't, log and fire an error page or something
 
 		// It does, kudos for making it this far bu we still need to check for empty fields and that stuff
+
+		// after endless checks, call the model and update the post
+		$updated = Post::update($data = array(), $id);
+
+		// Return to the post page
+	}
+
+	public function delete()
+	{
+		// Check
+
+		// It passes, call the model and be done with it already
+
+		// Re-direct the user to the BoardIndex
 	}
 }
