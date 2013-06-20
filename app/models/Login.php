@@ -30,7 +30,16 @@ use lithium\util\collection\Filters;
 
 class Login extends \lithium\data\Model
 {
-	public static function __init() 
+	public static function __init()
 	{
+		Validator::add('Username', function($value)
+		{
+		});
+
+		Validator::add('Mail', function($value)
+		{
+		});
 	}
+
+	function validUsername()
 }

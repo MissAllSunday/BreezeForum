@@ -42,6 +42,9 @@ if ($locales = Environment::get('locales')) {
  */
 Router::connect('/', 'Pages::view');
 
+Router::connect('/post/{:args}', 'Post::index');
+Router::connect('/post/add/{:args}', 'Post::add');
+
 /**
  * Connect the rest of `PagesController`'s URLs. This will route URLs like `/pages/about` to
  * `PagesController`, rendering `/views/pages/about.html.php` as a static page.
@@ -70,8 +73,8 @@ if (!Environment::is('production')) {
  * is an integer, uncomment the routes below to enable URLs like `/posts/edit/1138`,
  * `/posts/view/1138.json`, etc.
  */
-// Router::connect('/{:controller}/{:action}/{:id:\d+}.{:type}', array('id' => null));
-// Router::connect('/{:controller}/{:action}/{:id:\d+}');
+Router::connect('/{:controller}/{:action}/{:id:\d+}.{:type}', array('id' => null));
+Router::connect('/{:controller}/{:action}/{:id:\d+}');
 
 /**
  * If you're using a document-oriented database, such as CouchDB or MongoDB, or another type of
